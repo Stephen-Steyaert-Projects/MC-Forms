@@ -46,3 +46,7 @@ services:
     init: true
     networks:
       - nginx-proxy
+
+networks:
+  nginx-proxy:
+    external: true
