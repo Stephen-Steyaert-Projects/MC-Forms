@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Forms{% endblock %}
+
+{% block content %}
+<div class="card shadow-sm">
+  <div class="card-body p-4">
+    <h2 class="card-title mb-4">Forms</h2>
+    <div class="list-group">
+      <a href="{% url 'whitelist:form' %}" class="list-group-item list-group-item-action">
+        Whitelist Request
+      </a>
+      <a href="{% url 'recs:form' %}" class="list-group-item list-group-item-action">
+        Submit a Recommendation
+      </a>
+      <a href="{% url 'reports:form' %}" class="list-group-item list-group-item-action">
+        Submit an Issue
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}
