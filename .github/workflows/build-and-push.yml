@@ -4,6 +4,16 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'config/**'
+      - 'whitelist/**'
+      - 'recs/**'
+      - 'reports/**'
+      - 'templates/**'
+      - 'Dockerfile'
+      - 'pyproject.toml'
+      - 'uv.lock'
+      - 'entrypoint.prod.sh'
   workflow_dispatch:
 
 env:
