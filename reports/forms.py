@@ -2,6 +2,9 @@ from django import forms
 import mojang
 
 
+_api = mojang.API()
+
+
 class IssueReportForm(forms.Form):
     mc_username = forms.CharField(max_length=16, label='Your Minecraft Username')
     short_description = forms.CharField(max_length=200, label='Short Description')
@@ -9,13 +12,10 @@ class IssueReportForm(forms.Form):
 
     def clean_mc_username(self):
         username = self.cleaned_data['mc_username']
-        try:
-            profile = mojang.MojangAPI.get_profile(username)
-            if profile is None:
-                raise forms.ValidationError('Minecraft username not found.')
-            self._mc_uuid = profile.id
-        except Exception:
-            raise forms.ValidationError('Could not verify Minecraft username.')
+        uuid = _api.get_uuid(username)
+        if not uuid:
+            raise forms.ValidationError('Minecraft username not found.')
+        self._mc_uuid = uuid
         return username
 
     def get_uuid(self):
