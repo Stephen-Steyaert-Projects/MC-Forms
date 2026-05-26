@@ -31,9 +31,14 @@ services:
       PLAYER_IDLE_TIMEOUT: "15"
       BUG_REPORT_LINK: "https://forms.steyaert.xyz/reports/"
       SERVER_NAME: "SteyaertSMP"
+      REPLACE_ENV_DURING_SYNC: "true"
+      DISCORDSRV_BOT_TOKEN: "${DISCORDSRV_BOT_TOKEN}"
+      DISCORDSRV_GLOBAL_CHANNEL_ID: "${DISCORDSRV_GLOBAL_CHANNEL_ID}"
+      DISCORDSRV_CONSOLE_CHANNEL_ID: "${DISCORDSRV_CONSOLE_CHANNEL_ID}"
     volumes:
       - "./data:/data"
       - "./plugins:/plugins"
+      - "./configs:/config"
     restart: unless-stopped
 
   forms:

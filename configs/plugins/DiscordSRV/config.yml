@@ -1,0 +1,7 @@
+BotToken: "${DISCORDSRV_BOT_TOKEN}"
+
+Channels: {"global": "${DISCORDSRV_GLOBAL_CHANNEL_ID}"}
+
+DiscordConsoleChannelId: "${DISCORDSRV_CONSOLE_CHANNEL_ID}"
+
+DiscordInviteLink: "https://discord.steyaert.xyz"
