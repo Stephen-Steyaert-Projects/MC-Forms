@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Recommendation Submissions{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Recommendation Submissions</h2>
+
+{% if active %}
+  <div class="list-group mb-4">
+    {% for entry in active %}
+      <div class="list-group-item">
+        <div class="d-flex justify-content-between align-items-start">
+          <strong>{{ entry.mc_username }}</strong>
+          <div class="d-flex align-items-center gap-2">
+            <small class="text-muted">{{ entry.submitted_at|date:"Y-m-d H:i" }}</small>
+            <form method="post" action="{% url 'recs:mark_done' entry.pk %}">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-sm btn-outline-success">Mark Done</button>
+            </form>
+          </div>
+        </div>
+        <p class="mb-0 mt-2 text-secondary">{{ entry.recommendation }}</p>
+        <small class="text-muted">UUID: {{ entry.mc_uuid }}</small>
+      </div>
+    {% endfor %}
+  </div>
+{% else %}
+  <p class="text-muted mb-4">No active submissions.</p>
+{% endif %}
+
+{% if done %}
+  <h5 class="text-muted mb-2">Done</h5>
+  <div class="list-group">
+    {% for entry in done %}
+      <div class="list-group-item opacity-50">
+        <div class="d-flex justify-content-between align-items-start">
+          <div>
+            <strong>{{ entry.mc_username }}</strong>
+            <span class="badge bg-success ms-2">Done</span>
+          </div>
+          <small class="text-muted">{{ entry.submitted_at|date:"Y-m-d H:i" }}</small>
+        </div>
+        <p class="mb-0 mt-2 text-secondary">{{ entry.recommendation }}</p>
+        <small class="text-muted">UUID: {{ entry.mc_uuid }}</small>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+{% endblock %}

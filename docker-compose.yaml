@@ -1,0 +1,48 @@
+services:
+  mc:
+    image: itzg/minecraft-server:latest
+    tty: true
+    stdin_open: true
+    ports:
+      - "25565:25565"
+      - "24454:24454"
+    environment:
+      EULA: "TRUE"
+      TYPE: "SPIGOT"
+      MEMORY: "4096M"
+      MOTD: "Join the Discord! https://discord.steyaert.xyz"
+      USE_AIKAR_FLAGS: "true"
+      TZ: "America/New_York"
+      DIFFICULTY: "2"
+      FORCE_GAMEMODE: "true"
+      OPS: |-
+        Steyaertc23
+        THEREALPRO3K
+      EXISTING_OPS_FILE: "SYNCHRONIZE"
+      ENABLE_WHITELIST: "true"
+      WHITELIST: |-
+        Steyaertc23
+        THEREALPRO3K
+      EXISTING_WHITELIST_FILE: "SYNCHRONIZE"
+      SPIGET_RESOURCES: |
+        18494
+        113071
+      PLAYER_IDLE_TIMEOUT: "5"
+    volumes:
+      - "./data:/data"
+      - "./plugins:/plugins"
+    restart: unless-stopped
+
+  forms:
+    image: steyaertc23/forms:latest
+    env_file:
+        - .env.prod
+    environment:
+      - VIRTUAL_HOST=forms.steyaert.xyz
+      - VIRTUAL_PORT=8000
+    volumes:
+      - "./database:/app/database"
+    restart: unless-stopped
+    init: true
+    networks:
+      - nginx-proxy

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Recommendation Submitted{% endblock %}
+
+{% block content %}
+<div class="card shadow-sm text-center">
+  <div class="card-body p-5">
+    <h2 class="card-title mb-3">Recommendation Submitted</h2>
+    <p class="text-muted">Thanks for your recommendation!</p>
+    <a href="{% url 'recs:form' %}" class="btn btn-outline-primary mt-2">Submit Another</a>
+  </div>
+</div>
+{% endblock %}

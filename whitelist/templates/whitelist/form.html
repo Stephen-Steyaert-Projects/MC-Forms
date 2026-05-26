@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}Whitelist Request{% endblock %}
+
+{% block content %}
+<div class="card shadow-sm">
+  <div class="card-body p-4">
+    <h2 class="card-title mb-4">Whitelist Request</h2>
+    <form method="post" novalidate>
+      {% csrf_token %}
+
+      <div class="form-floating mb-3">
+        <input type="text"
+               name="mc_username"
+               id="id_mc_username"
+               class="form-control {% if form.mc_username.errors %}is-invalid{% endif %}"
+               placeholder="Minecraft Username"
+               value="{{ form.mc_username.value|default:'' }}"
+               maxlength="16"
+               required>
+        <label for="id_mc_username">Minecraft Username</label>
+        {% for error in form.mc_username.errors %}
+          <div class="invalid-feedback">{{ error }}</div>
+        {% endfor %}
+      </div>
+
+      <div class="form-floating mb-3">
+        <input type="text"
+               name="discord_handle"
+               id="id_discord_handle"
+               class="form-control {% if form.discord_handle.errors %}is-invalid{% endif %}"
+               placeholder="Discord Handle"
+               value="{{ form.discord_handle.value|default:'' }}"
+               maxlength="100"
+               required>
+        <label for="id_discord_handle">Discord Handle</label>
+        {% for error in form.discord_handle.errors %}
+          <div class="invalid-feedback">{{ error }}</div>
+        {% endfor %}
+      </div>
+
+      <div class="form-floating mb-4">
+        <textarea name="reason"
+                  id="id_reason"
+                  class="form-control {% if form.reason.errors %}is-invalid{% endif %}"
+                  placeholder="Reason for Joining"
+                  style="height: 120px">{{ form.reason.value|default:'' }}</textarea>
+        <label for="id_reason">Reason for Joining (optional)</label>
+        {% for error in form.reason.errors %}
+          <div class="invalid-feedback">{{ error }}</div>
+        {% endfor %}
+      </div>
+
+      {% if form.non_field_errors %}
+        <div class="alert alert-danger">
+          {% for error in form.non_field_errors %}{{ error }}{% endfor %}
+        </div>
+      {% endif %}
+
+      <button type="submit" class="btn btn-primary w-100">Submit Request</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

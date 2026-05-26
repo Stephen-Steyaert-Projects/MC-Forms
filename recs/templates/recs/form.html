@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Submit a Recommendation{% endblock %}
+
+{% block content %}
+<div class="card shadow-sm">
+  <div class="card-body p-4">
+    <h2 class="card-title mb-4">Submit a Recommendation</h2>
+    <form method="post" novalidate>
+      {% csrf_token %}
+
+      <div class="form-floating mb-3">
+        <input type="text"
+               name="mc_username"
+               id="id_mc_username"
+               class="form-control {% if form.mc_username.errors %}is-invalid{% endif %}"
+               placeholder="Your Minecraft Username"
+               value="{{ form.mc_username.value|default:'' }}"
+               maxlength="16"
+               required>
+        <label for="id_mc_username">Your Minecraft Username</label>
+        {% for error in form.mc_username.errors %}
+          <div class="invalid-feedback">{{ error }}</div>
+        {% endfor %}
+      </div>
+
+      <div class="form-floating mb-4">
+        <textarea name="recommendation"
+                  id="id_recommendation"
+                  class="form-control {% if form.recommendation.errors %}is-invalid{% endif %}"
+                  placeholder="Recommendation"
+                  style="height: 150px">{{ form.recommendation.value|default:'' }}</textarea>
+        <label for="id_recommendation">Recommendation</label>
+        {% for error in form.recommendation.errors %}
+          <div class="invalid-feedback">{{ error }}</div>
+        {% endfor %}
+      </div>
+
+      {% if form.non_field_errors %}
+        <div class="alert alert-danger">
+          {% for error in form.non_field_errors %}{{ error }}{% endfor %}
+        </div>
+      {% endif %}
+
+      <button type="submit" class="btn btn-primary w-100">Submit</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
