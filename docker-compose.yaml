@@ -28,6 +28,8 @@ services:
         18494
         113071
       PLAYER_IDLE_TIMEOUT: "5"
+      BUG_REPORT_LINK: "https://forms.steyaert.xyz/reports/"
+      SERVER_NAME: "SteyaertSMP"
     volumes:
       - "./data:/data"
       - "./plugins:/plugins"
