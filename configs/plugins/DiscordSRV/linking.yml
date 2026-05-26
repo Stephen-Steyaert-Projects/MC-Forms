@@ -1,0 +1,14 @@
+Require linked account to play:
+  Enabled: true
+  Listener priority: HIGH
+  Listener event: AsyncPlayerPreLoginEvent
+  Whitelisted players bypass check: true
+  Check banned players: true
+  Only check banned players: false
+  Not linked message: "&7You must link your &9Discord &7account to play.\n\n&7Send a DM to &b{BOT}&7 in the Discord server containing just &b{CODE}&7 to link your account.\n\n&7Discord Invite » &b{INVITE}"
+  Must be in Discord server: true
+  Messages:
+    DiscordSRV still starting: "&cCurrently unavailable to check link status because the server is still connecting to Discord.\n\nTry again in a minute."
+    Not in server: "&cYou are currently not a part of our Discord server.\n\nJoin at {INVITE}!"
+    Failed for unknown reason: "&cAn error occurred while trying to verify your account.\n\nContact your server admin about this issue."
+    Kicked for unlinking: "&cYou have been kicked from the server for unlinking your accounts.\n\nPlease rejoin the server to link your accounts again."

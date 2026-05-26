@@ -1,0 +1,11 @@
+Voice enabled: true
+Tick speed: 5
+Voice category: 1508974116995203253
+Lobby channel: 1508974245269602314
+Mute users who bypass speak permissions in the lobby: true
+
+Network:
+  Vertical Strength: 40
+  Horizontal Strength: 120
+  Falloff: 5
+  Channels are visible: true

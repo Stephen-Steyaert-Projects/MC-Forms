@@ -1,0 +1,47 @@
+DiscordToMinecraftChatMessageFormat: "[<aqua>Discord</aqua> | %toprolecolor%%toprolealias%<reset>] %name%%reply% » %message%"
+DiscordToMinecraftChatMessageFormatNoRole: "[<aqua>Discord</aqua>] %name%%reply% » %message%"
+
+MinecraftChatToDiscordMessageFormat: "**%primarygroup%** %displayname% » %message%"
+MinecraftChatToDiscordMessageFormatNoPrimaryGroup: "%displayname% » %message%"
+
+MinecraftPlayerJoinMessage:
+  Embed:
+    Color: "#00ff00"
+    Author:
+      ImageUrl: "%embedavatarurl%"
+      Name: "%username% joined the server"
+
+MinecraftPlayerFirstJoinMessage:
+  Embed:
+    Color: "#ffd700"
+    Author:
+      ImageUrl: "%embedavatarurl%"
+      Name: "%username% joined the server for the first time"
+
+MinecraftPlayerLeaveMessage:
+  Embed:
+    Color: "#ff0000"
+    Author:
+      ImageUrl: "%embedavatarurl%"
+      Name: "%username% left the server"
+
+MinecraftPlayerDeathMessage:
+  Embed:
+    Color: "#000000"
+    Author:
+      ImageUrl: "%embedavatarurl%"
+      Name: "%deathmessage%"
+
+MinecraftPlayerAchievementMessage:
+  Embed:
+    Color: "#ffd700"
+    Author:
+      ImageUrl: "%embedavatarurl%"
+      Name: "%username% has made the advancement %achievement%!"
+
+DiscordChatChannelServerStartupMessage: ":white_check_mark: **Server has started**"
+DiscordChatChannelServerShutdownMessage: ":octagonal_sign: **Server has stopped**"
+
+ServerWatchdogMessage: "<t:%timestamp%:R> %guildowner%, the server hasn't ticked in %timeout% seconds :fire::bangbang:"
+
+CodeGenerated: "Your link code is %code%. DM the bot on Discord (%botname%) containing just this code as the message to link your accounts."

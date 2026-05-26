@@ -1,7 +1,30 @@
 BotToken: "${DISCORDSRV_BOT_TOKEN}"
 
-Channels: {"global": "${DISCORDSRV_GLOBAL_CHANNEL_ID}"}
+Channels: {"global": "1508965814705979492", "join": "1508965864404160584", "leave": "1508965864404160584", "deaths": "1508966087537066165", "awards": "1508966020629532842", "link": "1508965982775935067", "broadcasts": "1508965886055288852", "status": "1508962467848523827", "watchdog": "1508962467848523827"}
 
-DiscordConsoleChannelId: "${DISCORDSRV_CONSOLE_CHANNEL_ID}"
+DiscordConsoleChannelId: "1508957110610694305"
 
 DiscordInviteLink: "https://discord.steyaert.xyz"
+
+EnablePresenceInformation: true
+UseModernPaperChatEvent: true
+
+DiscordGameStatus: ["playing SteyaertSMP"]
+
+DiscordChatChannelRolesAllowedToUseColorCodesInChat: ["Owner", "Admin", "Moderator"]
+DiscordChatChannelBlockBots: true
+
+DiscordChatChannelConsoleCommandPrefix: "!console"
+DiscordChatChannelConsoleCommandRolesAllowed: ["Owner", "Moderator"]
+DiscordChatChannelConsoleCommandWhitelist: ["say", "lag", "tps", "restart"]
+DiscordChatChannelConsoleCommandWhitelistBypassRoles: ["Owner"]
+
+ChannelUpdater:
+  - ChannelId: "1508962467848523827"
+    Format: "%playercount%/%playermax% players online"
+    ShutdownFormat: "Server is offline"
+    UpdateInterval: 10
+
+DiscordCannedResponses: {"!ip": "minecraft.steyaert.xyz", "!discord": "https://discord.steyaert.xyz", "!forms": "https://forms.steyaert.xyz"}
+
+ServerWatchdogTimeout: 60
