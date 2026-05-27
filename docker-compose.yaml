@@ -33,8 +33,6 @@ services:
       SERVER_NAME: "SteyaertSMP"
       REPLACE_ENV_DURING_SYNC: "true"
       DISCORDSRV_BOT_TOKEN: "${DISCORDSRV_BOT_TOKEN}"
-      DISCORDSRV_CONSOLE_CHANNEL_ID: "${DISCORDSRV_CONSOLE_CHANNEL_ID}"
-      DISCORDSRV_SERVER_IP: "${DISCORDSRV_SERVER_IP}"
     volumes:
       - "./data:/data"
       - "./plugins:/plugins"
