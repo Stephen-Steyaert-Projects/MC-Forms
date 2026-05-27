@@ -24,10 +24,10 @@ services:
         THEREALPRO3K
       EXISTING_WHITELIST_FILE: "SYNCHRONIZE"
       MODRINTH_PROJECTS: |
-        https://modrinth.com/plugin/discordsrv
-        https://modrinth.com/plugin/autotreechop
-        https://modrinth.com/plugin/worldedit
-        https://modrinth.com/plugin/worldguard
+        paper:discordsrv
+        paper:autotreechop
+        paper:worldedit
+        paper:worldguard
       PLAYER_IDLE_TIMEOUT: "15"
       BUG_REPORT_LINK: "https://forms.steyaert.xyz/reports/"
       SERVER_NAME: "SteyaertSMP"
