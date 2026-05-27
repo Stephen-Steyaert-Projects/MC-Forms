@@ -27,8 +27,6 @@ services:
         worldedit
         worldguard
         autotreechop
-      SPIGET_RESOURCES: |-
-        18494
       PLAYER_IDLE_TIMEOUT: "15"
       BUG_REPORT_LINK: "https://forms.steyaert.xyz/reports/"
       SERVER_NAME: "SteyaertSMP"
@@ -36,8 +34,8 @@ services:
       DISCORDSRV_BOT_TOKEN: "${DISCORDSRV_BOT_TOKEN}"
     volumes:
       - "./data:/data"
-      - "./plugins:/data/plugins"
-      - "./configs:/data/config"
+      # - "./plugins:/plugins" # CP THAT OVER
+      # - "./configs:/data/config" # CP That over
     restart: unless-stopped
 
   forms:
