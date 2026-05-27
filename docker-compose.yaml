@@ -35,8 +35,8 @@ services:
       DISCORDSRV_BOT_TOKEN: "${DISCORDSRV_BOT_TOKEN}"
     volumes:
       - "./data:/data"
-      - "./plugins:/plugins"
-      - "./configs:/config"
+      - "./plugins:/data/plugins"
+      - "./configs:/data/config"
     restart: unless-stopped
 
   forms:
