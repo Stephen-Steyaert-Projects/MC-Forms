@@ -14,7 +14,8 @@ services:
       USE_AIKAR_FLAGS: "true"
       TZ: "America/New_York"
       DIFFICULTY: "2"
-      FORCE_GAMEMODE: "true"
+      ENABLE_COMMAND_BLOCK: "true"
+      SPAWN_PROTECTION: "0"
       OPS: |-
         Steyaertc23
         THEREALPRO3K
@@ -27,6 +28,7 @@ services:
         worldedit
         worldguard
         autotreechop
+        griefprevention
       PLAYER_IDLE_TIMEOUT: "15"
       BUG_REPORT_LINK: "https://forms.steyaert.xyz/reports/"
       SERVER_NAME: "SteyaertSMP"
