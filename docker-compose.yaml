@@ -5,9 +5,9 @@ services:
     stdin_open: true
     ports:
       - "25565:25565"
-      - "24454:24454"
     environment:
       EULA: "TRUE"
+      VERSION: "1.21.8"
       TYPE: "PAPER"
       MEMORY: "4096M"
       MOTD: "Join the Discord! https://discord.steyaert.xyz"
@@ -29,11 +29,11 @@ services:
         worldguard
         autotreechop
         griefprevention
+        essentialsx
       PLAYER_IDLE_TIMEOUT: "15"
       BUG_REPORT_LINK: "https://forms.steyaert.xyz/reports/"
       SERVER_NAME: "SteyaertSMP"
       REPLACE_ENV_DURING_SYNC: "true"
-      DISCORDSRV_BOT_TOKEN: "${DISCORDSRV_BOT_TOKEN}"
     volumes:
       - "./data:/data"
       # - "./plugins:/plugins" # CP THAT OVER
